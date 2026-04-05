@@ -26,7 +26,7 @@ public class JsoupServiceImpl implements JsoupService {
 
         try {
             Document doc = Jsoup.connect(url).get();
-            // 뉴스 제목을 담고 있는 선택자(Selector)를 찾아야 하네. (사이트마다 다름)
+
             Elements titles = doc.select(".sa_text_strong");
 
             for (Element element : titles) {

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class NewsProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
-    private final ObjectMapper objectMapper; // DTO를 JSON 문자열로 바꿀 때 사용
+    private final ObjectMapper objectMapper;
 
     public void sendNews(NewsDto news) {
         try {
