@@ -2,7 +2,6 @@ server:
   port: 9000
 
 spring:
-  # 1. Database ??
   datasource:
     url: jdbc:postgresql://localhost:5432/news_db
     username: admin
@@ -11,10 +10,9 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update # ??? ?? ??
+      ddl-auto: update
     show-sql: true
 
-  # 2. Kafka ??
   kafka:
     bootstrap-servers: localhost:9092
     producer:
