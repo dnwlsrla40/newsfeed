@@ -23,3 +23,9 @@ spring:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: llama3

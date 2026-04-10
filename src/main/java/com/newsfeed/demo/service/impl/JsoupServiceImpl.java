@@ -19,8 +19,8 @@ import java.time.LocalDateTime;
 public class JsoupServiceImpl implements JsoupService {
     private final NewsProducer newsProducer;
 
-    // 아침 8시 스케줄링 전, 테스트를 위해 1분마다 실행되게 설정
-    @Scheduled(fixedDelay = 60000)
+    // 테스트를 위해 5분마다 실행되게 설정
+    @Scheduled(fixedDelay = 300000)
     public void scrapeITNews() {
         String url = "https://news.naver.com/section/105"; // 네이버 IT 뉴스 예시
 

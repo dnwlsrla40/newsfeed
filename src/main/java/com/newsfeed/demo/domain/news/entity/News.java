@@ -35,7 +35,8 @@ public class News {
     private String summary; // AI가 요약해줄 3줄 핵심 내용
 
     @Column(name = "category")
-    private String category; // 분류 (주식, 경제, IT 등)
+    @Enumerated(EnumType.STRING)
+    private NewsCategory category; // 분류 (주식, 경제, IT 등)
 
     @Column(name = "is_read")
     @Builder.Default
@@ -46,7 +47,7 @@ public class News {
     private LocalDateTime createdAt; // 수집 및 저장 시간
 
     // 비즈니스 로직: AI 요약본 업데이트
-    public void updateSummary(String summary, String category) {
+    public void updateSummary(String summary, NewsCategory category) {
         this.summary = summary;
         this.category = category;
     }
