@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.5.13-SNAPSHOT'
+    id 'org.springframework.boot' version '3.3.4'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -23,23 +23,26 @@ configurations {
 repositories {
     mavenCentral()
     maven { url = 'https://repo.spring.io/snapshot' }
+    maven { url = 'https://repo.spring.io/milestone' }
 }
 
 dependencies {
-    // Web & Tool
-    implementation 'org.springframework.boot:spring-boot-starter-web' // 일반 MVC 방식 추천
-    implementation 'org.jsoup:jsoup:1.17.2' // 안정적인 최신 버전
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.jsoup:jsoup:1.17.2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
     // Kafka
     implementation 'org.springframework.kafka:spring-kafka'
 
-    // Database (PostgreSQL 연동용)
+    // JPA & Postgres
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'org.postgresql:postgresql'
 
-    // Testing
+    // Spring AI Ollama
+    implementation 'org.springframework.ai:spring-ai-ollama-spring-boot-starter:1.0.0-M1'
+
+    // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
